@@ -1,11 +1,9 @@
 from z3 import *
 
-y = 0
-
-def encrypt( last_val, key):
+def encrypt( last_key, key):
     s = Solver()
     x= BitVec('x', 8)
-    s.add(last_val ^ (x ^ (x >> 4)) ^ key == 0) # 0 ^ (x ^ (x >> 4))
+    s.add(last_key ^ (x ^ (x >> 4)) ^ key == 0)
     s.add(x >= ord('!'))
     s.add (x <= ord('~'))
     if s.check() == sat:
@@ -25,6 +23,5 @@ keys = [0,0x72, 0x1d, 0x6f, 0xa, 0x79, 0x19,0x65, 0x2, 0x77,
 flag = ""
 for i in range(1, len(keys)):
     val = encrypt(keys[i-1], keys[i])
-    print(f"{val} + {chr(val)}")
     flag += chr(val)
 print(flag)

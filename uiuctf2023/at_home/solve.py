@@ -1,19 +1,18 @@
 from z3 import *
 
 def int_from_arr(arr):
-    known_sum = 0
-    var_sum = 0
+    result = 0
+
     arr= arr[::-1]
 
     for i, val in enumerate(arr):
-        if isinstance(val, int):
-            known_sum += val * 0x100**i
-        else:
-            var_sum+= val * 0x100**i
+        
+        result += val * 0x100**i
+
 
     arr = arr[::-1]
-    print(hex(known_sum))
-    return known_sum + var_sum
+
+    return result
 
 def main():
     s = Solver()

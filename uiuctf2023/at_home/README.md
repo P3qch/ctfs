@@ -39,9 +39,9 @@ flag = int.from_bytes(b"uiuctf{******************}", "big")
 [...]
 c = (flag * e) % n
 ```
-so the flag starts with `uiuctf{`, then it got 18 unknown printable characters (cuz it's a flag :D), and then it ends with `}`.
+so the flag starts with `uiuctf{`, then it got 18 unknown, printable characters (cuz it's a flag :D), and then it ends with `}`.
 In addition we know that `c = (flag * e) % n`, and because we know e, n and c, it's an equation with one unknown.
-BUT they don't teach you in high-school how to solve stuff like that, therefore i'll just feed all of this info to z3, and pray that he'll succeed to solve the equation.
+BUT they don't teach you in high-school how to solve stuff like that (the modulus and the fact that each byte is printable), therefore i'll just feed all of this info to z3, and pray that he'll succeed to solve the equation.
 
 ```py
 from z3 import *
@@ -52,7 +52,7 @@ def int_from_arr(arr):
     arr= arr[::-1]
 
     for i, val in enumerate(arr):
-        if isinstance(val, int):
+        if isinstance(val, int): # i've done this 
             known_sum += val * 0x100**i
         else:
             var_sum+= val * 0x100**i
@@ -100,4 +100,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+``` 
+We run this and get a flag! horray!
+```sh
+$ python3 ./solve.py
+uiuctf{W3_hav3_R5A_@_h0m3}
 ```

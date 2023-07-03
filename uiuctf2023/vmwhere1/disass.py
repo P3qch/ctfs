@@ -37,7 +37,7 @@ def disass (program):
                 i += 3
             case 0xd:
                 addr = (program[i+1] << 8) + program[i+2]
-                result += 'jmp SHORT ' + hex(twos_comp(addr, 16) + 3) # jmps if top of stack is 0
+                result += 'jmp SHORT ' + hex(twos_comp(addr, 16) + 3) # jmps 
                 i += 3
             case 0xe:
                 result += 'pop garbage'
