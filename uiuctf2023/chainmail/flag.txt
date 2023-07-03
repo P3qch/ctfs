@@ -1,0 +1,9 @@
+flag{flag}
+Hello, welcome to the chain email generator! Please give the name of a recipient: Okay, here's your newly generated chainmail message!
+
+Hello AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBB\x1a\x10@,
+Have you heard the news??? Send this email to 10 friends or else you'll have bad luck!
+
+Your friend,
+Jim
+uiuctf{y0ur3_4_B1g_5h0t_n0w!11!!1!!!11!!!!1}
