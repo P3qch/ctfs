@@ -119,7 +119,7 @@ Have you heard the news??? Send this email to 10 friends or else you'll have bad
 Your friend,
 Jim
 ```
-hmmm weird we didn't get a flag. Last time something like this happened to me it was the MOVABS issue. most likely fopen uses this instructions, and this instructions works only if the stack is aligned properly, but we misaligned it by putting our evil payload onto it. Let's fix it by adding something to the stack, but what can we add? let's add another `ret` address before our get_flag address. So that before we jump to get flag, we jump to another return and alighn the stack.
+hmmm weird we didn't get a flag. Last time something like this happened to me it was the MOVAPS issue. most likely fopen uses this instructions, and this instructions works only if the stack is aligned properly, but we misaligned it by putting our evil payload onto it. Let's fix it by adding something to the stack, but what can we add? let's add another `ret` address before our get_flag address. So that before we jump to get flag, we jump to another return and alighn the stack.
 ```sh
 $ ROPgadget --binary chal --only  'ret'
 Gadgets information
