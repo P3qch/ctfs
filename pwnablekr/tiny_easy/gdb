@@ -1,0 +1,3 @@
+set follow-fork-mode child
+catch exec
+set detach-on-fork off
