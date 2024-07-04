@@ -1,0 +1,1 @@
+overwrite over input buffer (whose size is rounded to 16) and the metadata of next chunk (mchunk_prev_size, mchunk_size) and then write pico

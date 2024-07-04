@@ -1,0 +1,16 @@
+package b.b.a.a.a0;
+
+import com.google.android.material.textfield.TextInputLayout;
+
+/* loaded from: classes.dex */
+public class b extends e {
+    public b(TextInputLayout textInputLayout) {
+        super(textInputLayout);
+    }
+
+    @Override // b.b.a.a.a0.e
+    public void a() {
+        this.f965a.setEndIconOnClickListener(null);
+        this.f965a.setEndIconOnLongClickListener(null);
+    }
+}

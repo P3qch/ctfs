@@ -1,0 +1,4 @@
+we want x to be some function (probs win)
+binary is no-pie so we can just take the address of win (0x4011a0)
+once again there is an overflow of buf, its size has been rounded to 16 (because that's how it works) 
+and after that we have 16 bytes of heap metadata of the next chunk (x in this case) after which come the contents of x
